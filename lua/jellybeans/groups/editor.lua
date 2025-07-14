@@ -20,7 +20,7 @@ function M.get(c, opts)
     FloatTitle = {
       bg = opts.transparent and "NONE" or c.background,
       fg = c.biloba_flower,
-      bold = true,
+      bold = opts.bold,
     },
     ColorColumn = { bg = c.total_black },
     Conceal = { fg = c.morning_glory },
@@ -42,14 +42,14 @@ function M.get(c, opts)
     FoldColumn = { fg = c.shuttle_grey, bg = c.mine_shaft },
     SignColumn = { fg = c.boulder },
     LineNr = { fg = c.zambezi },
-    MatchParen = { fg = c.wewak, bold = true },
+    MatchParen = { fg = c.wewak, bold = opts.bold },
     ModeMsg = { fg = c.highland },
     NonText = { fg = c.scorpion },
     Pmenu = { bg = c.grey_three },
     PmenuSel = {
       fg = vim.o.background == "light" and c.background or c.foreground,
       bg = c.calypso,
-      bold = true,
+      bold = opts.bold,
     },
     PmenuSbar = {
       bg = c.tundora,

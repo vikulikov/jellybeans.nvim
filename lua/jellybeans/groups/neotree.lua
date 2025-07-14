@@ -6,7 +6,7 @@ function M.get(c, opts)
   return {
     NeoTreeDirectoryName = { fg = c.morning_glory },
     NeoTreeDirectoryIcon = { fg = c.morning_glory },
-    NeoTreeRootName = { fg = c.goldenrod, bold = true },
+    NeoTreeRootName = { fg = c.goldenrod, bold = opts.bold },
     NeoTreeFileName = { fg = c.foreground },
     NeoTreeFileIcon = { fg = c.morning_glory },
     NeoTreeFileNameOpened = { fg = c.perano },

@@ -68,12 +68,12 @@ function M.get(c, opts)
     ["@markup.link.label.symbol"] = "Identifier",
     ["@markup.list"] = { fg = c.morning_glory }, -- For special punctutation that does not fall in the categories before.
     ["@markup.list.checked"] = { fg = c.tea_green }, -- For brackets and parens.
-    ["@markup.list.markdown"] = { fg = c.raw_sienna, bold = true },
+    ["@markup.list.markdown"] = { fg = c.raw_sienna, bold = opts.bold },
     ["@markup.list.unchecked"] = { fg = c.ship_cove }, -- For brackets and parens.
     ["@markup.math"] = "Special",
     ["@markup.raw"] = "String",
     ["@markup.strikethrough"] = { strikethrough = true },
-    ["@markup.strong"] = { fg = c.wewak, bold = true },
+    ["@markup.strong"] = { fg = c.wewak, bold = opts.bold },
     ["@markup.underline"] = { underline = true },
     ["@module"] = "Include",
     ["@module.go"] = "Indentifier",

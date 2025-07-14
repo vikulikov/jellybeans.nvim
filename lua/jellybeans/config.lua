@@ -9,6 +9,7 @@ local M = {}
 ---@class jellybeans.Config
 ---@field transparent? boolean
 ---@field italics? boolean
+---@field bold? boolean
 ---@field flat_ui? boolean
 ---@field on_highlights? fun(highlights: jellybeans.Highlights, colors: ColorScheme)
 ---@field on_colors? fun(colors: ColorScheme)
@@ -16,6 +17,7 @@ local M = {}
 M.defaults = {
   transparent = false,
   italics = true,
+  bold = true,
   flat_ui = true,
   background = {
     dark = "jellybeans",

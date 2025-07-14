@@ -22,7 +22,7 @@ function M.get(c, opts)
     },
     AvanteInlineHint = {
       fg = c.biloba_flower,
-      bold = true,
+      bold = opts.bold,
     },
     AvanteToBeDeleted = {
       bg = c.temptress,
@@ -36,7 +36,7 @@ function M.get(c, opts)
     AvanteConfirmTitle = {
       bg = opts.transparent and "NONE" or c.background,
       fg = c.morning_glory,
-      bold = true,
+      bold = opts.bold,
     },
     AvanteCommentFg = {
       fg = c.regent_grey,
@@ -108,7 +108,7 @@ function M.get(c, opts)
     AvanteFileSelectorTitle = {
       bg = c.koromiko,
       fg = c.background,
-      bold = true,
+      bold = opts.bold,
     },
     AvanteFileSelectorSelection = {
       bg = c.grey_one,
@@ -120,7 +120,7 @@ function M.get(c, opts)
     },
     AvanteFileSelectorMatching = {
       fg = c.koromiko,
-      bold = true,
+      bold = opts.bold,
     },
     AvanteFileSelectorPrompt = {
       bg = opts.transparent and "NONE" or c.grey_three,

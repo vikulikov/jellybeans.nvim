@@ -69,6 +69,7 @@ Jellybeans ships with the following defaults
 {
   transparent = false,
   italics = true,
+  bold = true,
   flat_ui = true, -- toggles "flat UI" for pickers
   background = {
     dark = "jellybeans", -- default dark palette

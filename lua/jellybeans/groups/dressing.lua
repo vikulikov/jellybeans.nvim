@@ -8,10 +8,10 @@ function M.get(c, opts)
   return {
     DressingInputNormal = { bg = opts.transparent and "NONE" or c.background, fg = c.foreground },
     DressingInputBorder = { fg = c.float_border },
-    DressingInputTitle = { fg = c.biloba_flower, bold = true },
+    DressingInputTitle = { fg = c.biloba_flower, bold = opts.bold },
     DressingSelectNormal = { bg = opts.transparent and "NONE" or c.background, fg = c.foreground },
     DressingSelectBorder = { fg = c.float_border },
-    DressingSelectTitle = { fg = c.biloba_flower, bold = true },
+    DressingSelectTitle = { fg = c.biloba_flower, bold = opts.bold },
   }
 end
 

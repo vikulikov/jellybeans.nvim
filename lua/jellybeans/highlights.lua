@@ -17,9 +17,12 @@ function M.setup(opts, palette_name_override)
   -- Apply palette-specific highlight overrides if they exist
   if p.highlights ~= nil then
     for group_name, highlight in pairs(p.highlights(p.palette)) do
-      -- Honor user preferences for italics and transparent
+      -- Honor user preferences for italics, bold, and transparent
       if highlight.italic ~= nil and opts and opts.italics == false then
         highlight.italic = false
+      end
+      if highlight.bold ~= nil and opts and opts.bold == false then
+        highlight.bold = false
       end
       if highlight.bg and opts and opts.transparent == true then
         highlight.bg = "NONE"

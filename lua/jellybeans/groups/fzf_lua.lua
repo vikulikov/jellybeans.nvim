@@ -21,7 +21,7 @@ function M.get(c, opts)
       FzfLuaPreviewTitle = { bg = c.koromiko, fg = prompt },
       FzfLuaResultsTitle = { bg = c.koromiko, fg = prompt },
       FzfLuaCursor = { bg = c.grey_one, fg = c.foreground },
-      FzfLuaSearch = { fg = c.koromiko, bold = true },
+      FzfLuaSearch = { fg = c.koromiko, bold = opts.bold },
       FzfLuaScrollBorder = { fg = c.background },
       FzfLuaScrollFloatEmpty = { bg = c.background },
     }
@@ -38,17 +38,17 @@ function M.get(c, opts)
     FzfLuaTitle = { bg = c.perano, fg = c.background },
     FzfLuaPromptPrefix = { fg = c.koromiko, bg = c.background },
     FzfLuaPromptTitle = { fg = c.background, bg = c.koromiko },
-    FzfLuaResultsTitle = { bg = c.perano, fg = c.background, bold = true },
-    FzfLuaPreviewTitle = { bg = c.koromiko, fg = c.background, bold = true },
+    FzfLuaResultsTitle = { bg = c.perano, fg = c.background, bold = opts.bold },
+    FzfLuaPreviewTitle = { bg = c.koromiko, fg = c.background, bold = opts.bold },
     FzfLuaCursor = { bg = c.grey_one, fg = c.foreground },
-    FzfLuaSearch = { fg = c.koromiko, bold = true },
+    FzfLuaSearch = { fg = c.koromiko, bold = opts.bold },
     FzfLuaScrollBorder = { fg = c.grey_three },
     FzfLuaScrollFloatEmpty = { bg = c.background },
     FzfLuaHeaderBind = { fg = c.koromiko },
     FzfLuaHeaderText = { fg = c.grey_two },
     FzfLuaList = { fg = c.foreground },
     FzfLuaSelected = { bg = c.grey_one, fg = c.foreground },
-    FzfLuaMatching = { fg = c.koromiko, bold = true },
+    FzfLuaMatching = { fg = c.koromiko, bold = opts.bold },
   })
 end
 

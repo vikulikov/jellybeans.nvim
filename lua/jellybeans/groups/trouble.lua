@@ -10,12 +10,12 @@ function M.get(c, opts)
     TroubleNormal = { bg = opts.transparent and "NONE" or c.background, fg = c.foreground },
     TroubleNormalNC = { bg = opts.transparent and "NONE" or c.background, fg = c.foreground },
     TroubleText = { fg = c.foreground },
-    TroubleCount = { fg = c.biloba_flower, bg = c.grey_one, bold = true },
+    TroubleCount = { fg = c.biloba_flower, bg = c.grey_one, bold = opts.bold },
     TroubleIndent = { fg = c.grey_three },
     TroubleFoldIcon = { fg = c.perano },
 
     -- File headers
-    TroubleFile = { fg = c.morning_glory, bold = true },
+    TroubleFile = { fg = c.morning_glory, bold = opts.bold },
     TroubleFileIcon = { fg = c.morning_glory },
 
     -- Source code locations

@@ -4,7 +4,7 @@ local M = {}
 
 function M.get(c, opts)
   return {
-    Bold = { bold = true },
+    Bold = { bold = opts.bold },
     Comment = { fg = c.grey, italic = opts.italics },
     Constant = { fg = c.raw_sienna },
     Define = { fg = c.ship_cove },

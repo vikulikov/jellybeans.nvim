@@ -11,12 +11,12 @@ function M.get(c, opts)
 
   return {
     -- Mini.statusline
-    MiniStatuslineModeNormal = { fg = c.total_black, bg = normal_bg, bold = true },
-    MiniStatuslineModeInsert = { fg = c.total_black, bg = insert_bg, bold = true },
-    MiniStatuslineModeVisual = { fg = c.total_black, bg = visual_bg, bold = true },
-    MiniStatuslineModeReplace = { fg = c.total_black, bg = replace_bg, bold = true },
-    MiniStatuslineModeCommand = { fg = c.total_black, bg = command_bg, bold = true },
-    MiniStatuslineModeOther = { fg = c.total_black, bg = c.grey_chateau, bold = true },
+    MiniStatuslineModeNormal = { fg = c.total_black, bg = normal_bg, bold = opts.bold },
+    MiniStatuslineModeInsert = { fg = c.total_black, bg = insert_bg, bold = opts.bold },
+    MiniStatuslineModeVisual = { fg = c.total_black, bg = visual_bg, bold = opts.bold },
+    MiniStatuslineModeReplace = { fg = c.total_black, bg = replace_bg, bold = opts.bold },
+    MiniStatuslineModeCommand = { fg = c.total_black, bg = command_bg, bold = opts.bold },
+    MiniStatuslineModeOther = { fg = c.total_black, bg = c.grey_chateau, bold = opts.bold },
 
     MiniStatuslineDevinfo = { fg = c.foreground, bg = c.grey_one },
     MiniStatuslineFilename = { fg = c.grey_two, bg = c.background },
