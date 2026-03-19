@@ -59,6 +59,12 @@ vim.cmd[[colorscheme jellybeans-mono]]
 
 -- Mono light
 vim.cmd[[colorscheme jellybeans-mono-light]]
+
+-- Warm dark
+vim.cmd[[colorscheme jellybeans-warm]]
+
+-- High contrast dark
+vim.cmd[[colorscheme jellybeans-hc]]
 ```
 
 ## 🛠️ Configuration
@@ -90,7 +96,7 @@ Jellybeans ships with the following defaults
 
 ### Available Palettes
 
-Jellybeans offers two palette variants, each with dark and light modes:
+Jellybeans offers several palette variants:
 
 - **Vibrant** (default): The classic jellybeans with rich, saturated colors
 
@@ -102,7 +108,7 @@ Jellybeans offers two palette variants, each with dark and light modes:
   - Dark: `jellybeans_muted`
   - Light: `jellybeans_muted_light`
 
-- **Mono**: A monochrome palette with a dark and light mode
+- **Mono**: A monochrome palette with two accent colors for types and functions
 
   - Dark: `jellybeans_mono`
   - Light: `jellybeans_mono_light`
@@ -111,6 +117,14 @@ Jellybeans offers two palette variants, each with dark and light modes:
 
   - `accent_color_1`: Used for types and constants (defaults to a muted brown)
   - `accent_color_2`: Used for functions (defaults to a muted blue)
+
+- **Warm**: Shifts all neutral tones toward amber and espresso while keeping the vibrant accent colors unchanged. The chrome feels warmer; syntax stays recognizable.
+
+  - Dark: `jellybeans_warm`
+
+- **High Contrast**: Pushes the background toward near-black and the foreground toward near-white, with boosted accent saturation throughout. Useful for bright environments or accessibility needs.
+
+  - Dark: `jellybeans_hc`
 
 You can easily override the color palette. For example, here's how to change the background color for OLED:
 
