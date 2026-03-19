@@ -153,7 +153,7 @@ The theme includes a [Lualine](https://github.com/nvim-lualine/lualine.nvim) the
 ```lua
 require('lualine').setup {
     options = {
-        theme = 'jellybeans'
+        theme = 'jellybeans-nvim'
     }
 }
 ```
