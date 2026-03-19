@@ -31,7 +31,7 @@ function M.get(c, opts)
     IncSearch = { bg = c.koromiko, fg = c.mine_shaft },
     CursorColumn = { bg = c.grey_one },
     CursorLine = { bg = opts.transparent and "NONE" or c.cursor_line.bg },
-    CursorLineNr = { bg = opts.transparent and "NONE" or c.cursor_line_nr.bg },
+    CursorLineNr = { bg = opts.transparent and "NONE" or c.cursor_line_nr.bg, fg = c.cursor_line_nr.fg },
     Directory = { fg = c.brandy },
     DiffAdd = c.git.add,
     DiffChange = c.git.change,
