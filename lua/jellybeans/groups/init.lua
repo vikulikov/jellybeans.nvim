@@ -92,10 +92,6 @@ function M.setup(colors, opts)
 
   Util.resolve(ret)
 
-  if opts.on_highlights then
-    opts.on_highlights(ret, colors)
-  end
-
   return ret, groups
 end
 
