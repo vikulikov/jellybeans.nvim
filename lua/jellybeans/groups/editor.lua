@@ -9,16 +9,18 @@ function M.get(c, opts)
       fg = c.foreground,
     },
     NormalFloat = {
-      bg = opts.transparent and "NONE" or c.float_bg,
+      bg = opts.transparent and "NONE" or (opts.flat_ui and c.float_bg or c.background),
       fg = c.foreground,
     },
     NormalNC = {
       bg = opts.transparent and "NONE" or c.background,
       fg = c.foreground,
     },
-    FloatBorder = { fg = c.float_border },
+    FloatBorder = opts.flat_ui
+      and { fg = c.float_bg, bg = c.float_bg }
+      or { fg = c.float_border, bg = c.background },
     FloatTitle = {
-      bg = opts.transparent and "NONE" or c.background,
+      bg = opts.transparent and "NONE" or (opts.flat_ui and c.float_bg or c.background),
       fg = c.biloba_flower,
       bold = opts.bold,
     },

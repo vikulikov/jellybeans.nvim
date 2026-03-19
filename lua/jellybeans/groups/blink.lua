@@ -5,19 +5,18 @@ local M = {}
 function M.get(c, opts)
   return {
     BlinkCmpDoc = {
-      bg = c.grey_three,
+      bg = opts.flat_ui and c.grey_three or c.background,
       fg = c.perano,
     },
-    BlinkCmpDocBorder = {
-      bg = c.grey_three,
-      fg = c.grey_three,
-    },
+    BlinkCmpDocBorder = opts.flat_ui
+      and { bg = c.grey_three, fg = c.grey_three }
+      or { bg = c.background, fg = c.float_border },
     BlinkCmpGhostText = {
       link = "Comment",
     },
     BlinkCmpDocSeparator = {
-      bg = c.grey_three,
-      fg = c.biloba_flower,
+      bg = opts.flat_ui and c.grey_three or c.background,
+      fg = opts.flat_ui and c.biloba_flower or c.float_border,
     },
     BlinkCmpKindArray = "LspKindArray",
     BlinkCmpKindBoolean = "LspKindBoolean",
@@ -87,21 +86,19 @@ function M.get(c, opts)
       fg = c.morning_glory,
     },
     BlinkCmpMenu = {
-      bg = c.grey_three,
+      bg = opts.flat_ui and c.grey_three or c.background,
       fg = c.biloba_flower,
     },
-    BlinkCmpMenuBorder = {
-      bg = c.grey_three,
-      fg = c.grey_three,
-    },
+    BlinkCmpMenuBorder = opts.flat_ui
+      and { bg = c.grey_three, fg = c.grey_three }
+      or { bg = c.background, fg = c.float_border },
     BlinkCmpSignatureHelp = {
-      bg = c.grey_three,
+      bg = opts.flat_ui and c.grey_three or c.background,
       fg = c.biloba_flower,
     },
-    BlinkCmpSignatureHelpBorder = {
-      bg = c.grey_three,
-      fg = c.grey_three,
-    },
+    BlinkCmpSignatureHelpBorder = opts.flat_ui
+      and { bg = c.grey_three, fg = c.grey_three }
+      or { bg = c.background, fg = c.float_border },
   }
 end
 
