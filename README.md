@@ -1,34 +1,10 @@
-# 🟣 Jellybeans.nvim
+# Jellybeans.nvim
 
-A port of the jellybeans colorscheme for Neovim, written in Lua. Comes with multiple palettes.
+A Neovim port of the classic [jellybeans](https://github.com/nanotech/jellybeans.vim) colorscheme — multiple palettes, full Treesitter and LSP support, and [extras for popular terminal apps](https://github.com/WTFox/jellybeans.nvim/tree/main/extras).
 
-_Vibrant Dark (Default)_
-![Vibrant Dark](./images/default-vibrant.png)
+![Jellybeans.nvim](./images/hero.png)
 
-_Vibrant Light (`jellybeans_light`)_
-![Vibrant Light](./images/default-vibrant-light.png)
-
-_Muted Dark (`jellybeans_muted`)_
-![Muted Dark](./images/muted.png)
-
-_Muted Light (`jellybeans_muted_light`)_
-![Muted Light](./images/muted-light.png)
-
-_Mono Dark (`jellybeans_mono`)_
-![Mono Dark](./images/mono.png)
-
-_Mono Light (`jellybeans_mono_light`)_
-![Mono Light](./images/mono-light.png)
-
-## ✨ Features
-
-- Written in Lua
-- Highly configurable
-- Treesitter support
-- LSP support
-- [Support for popular plugins](https://github.com/WTFox/jellybeans.nvim/tree/main/lua/jellybeans/groups)
-
-## 📦 Installation
+## Installation
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
@@ -37,39 +13,57 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
   "wtfox/jellybeans.nvim",
   lazy = false,
   priority = 1000,
-  opts = {}, -- Optional
+  opts = {},
 }
 ```
 
 ```lua
--- Default (vibrant dark)
-vim.cmd[[colorscheme jellybeans]]
-
--- Vibrant light
-vim.cmd[[colorscheme jellybeans-light]]
-
--- Muted dark
-vim.cmd[[colorscheme jellybeans-muted]]
-
--- Muted light
-vim.cmd[[colorscheme jellybeans-muted-light]]
-
--- Mono dark
-vim.cmd[[colorscheme jellybeans-mono]]
-
--- Mono light
-vim.cmd[[colorscheme jellybeans-mono-light]]
-
--- Warm dark
-vim.cmd[[colorscheme jellybeans-warm]]
-
--- High contrast dark
-vim.cmd[[colorscheme jellybeans-hc]]
+vim.cmd[[colorscheme jellybeans]] -- vibrant dark (default)
 ```
 
-## 🛠️ Configuration
+## Palettes
 
-Jellybeans ships with the following defaults
+<details>
+<summary>Palette Gallery</summary>
+
+<table>
+  <tr>
+    <th>Vibrant Dark (<code>jellybeans</code>)</th>
+    <th>Vibrant Light (<code>jellybeans-light</code>)</th>
+    <th>Muted Dark (<code>jellybeans-muted</code>)</th>
+    <th>Muted Light (<code>jellybeans-muted-light</code>)</th>
+  </tr>
+  <tr>
+    <td><img src="./images/jellybeans-default.png"/></td>
+    <td><img src="./images/jellybeans-light.png"/></td>
+    <td><img src="./images/jellybeans-muted.png"/></td>
+    <td><img src="./images/jellybeans-muted-light.png"/></td>
+  </tr>
+  <tr>
+    <th>Mono Dark (<code>jellybeans-mono</code>)</th>
+    <th>Mono Light (<code>jellybeans-mono-light</code>)</th>
+    <th>Warm (<code>jellybeans-warm</code>)</th>
+    <th>High Contrast (<code>jellybeans-hc</code>)</th>
+  </tr>
+  <tr>
+    <td><img src="./images/jellybeans-mono.png"/></td>
+    <td><img src="./images/jellybeans-mono-light.png"/></td>
+    <td><img src="./images/jellybeans-warm.png"/></td>
+    <td><img src="./images/jellybeans-hc.png"/></td>
+  </tr>
+</table>
+
+</details>
+
+| Palette | Colorscheme(s) | Description |
+|---|---|---|
+| Vibrant | `jellybeans` / `jellybeans-light` | Classic rich, saturated colors |
+| Muted | `jellybeans-muted` / `jellybeans-muted-light` | Lower saturation, paper-like feel |
+| Mono | `jellybeans-mono` / `jellybeans-mono-light` | Monochrome with two configurable accent colors |
+| Warm | `jellybeans-warm` | Neutral tones shifted toward amber and espresso |
+| High Contrast | `jellybeans-hc` | Near-black background with boosted accent saturation |
+
+## Configuration
 
 ```lua
 {
@@ -78,117 +72,71 @@ Jellybeans ships with the following defaults
   bold = true,
   flat_ui = true, -- toggles "flat UI" for pickers
   background = {
-    dark = "jellybeans", -- default dark palette
+    dark = "jellybeans",       -- default dark palette
     light = "jellybeans_light", -- default light palette
   },
   plugins = {
     all = false,
-    auto = true, -- will read lazy.nvim and apply the colors for plugins that are installed
+    auto = true, -- auto-detect installed plugins via lazy.nvim
   },
-  on_highlights = function(highlights, colors)
-  end,
-  on_colors = function(colors)
+  on_highlights = function(highlights, colors) end,
+  on_colors = function(colors) end,
+}
+```
+
+### Customizing colors
+
+Override any palette color via `on_colors`. Example — pure black background for OLED:
+
+```lua
+opts = {
+  on_colors = function(c)
+    c.background = vim.o.background == "light" and "#ffffff" or "#000000"
   end,
 }
 ```
 
-> **Deprecated**: `style` and `palette` are no longer used. Instead, use the `background` table to set the default palette for dark and light backgrounds. This allows for more flexibility for future palettes and for your personal preferences.
-
-### Available Palettes
-
-Jellybeans offers several palette variants:
-
-- **Vibrant** (default): The classic jellybeans with rich, saturated colors
-
-  - Dark: `jellybeans` (default)
-  - Light: `jellybeans_light`
-
-- **Muted**: A lower saturation, paper-like theme
-
-  - Dark: `jellybeans_muted`
-  - Light: `jellybeans_muted_light`
-
-- **Mono**: A monochrome palette with two accent colors for types and functions
-
-  - Dark: `jellybeans_mono`
-  - Light: `jellybeans_mono_light`
-
-  The mono palette uses two accent colors to provide visual distinction while maintaining a cohesive monochromatic look:
-
-  - `accent_color_1`: Used for types and constants (defaults to a muted brown)
-  - `accent_color_2`: Used for functions (defaults to a muted blue)
-
-- **Warm**: Shifts all neutral tones toward amber and espresso while keeping the vibrant accent colors unchanged. The chrome feels warmer; syntax stays recognizable.
-
-  - Dark: `jellybeans_warm`
-
-- **High Contrast**: Pushes the background toward near-black and the foreground toward near-white, with boosted accent saturation throughout. Useful for bright environments or accessibility needs.
-
-  - Dark: `jellybeans_hc`
-
-You can easily override the color palette. For example, here's how to change the background color for OLED:
+The mono palette exposes two accent colors:
 
 ```lua
-  opts = {
-    on_colors = function(c)
-      local light_bg = "#ffffff"
-      local dark_bg = "#000000"
-      c.background = vim.o.background == "light" and light_bg or dark_bg
-    end,
-  }
+opts = {
+  on_colors = function(c)
+    c.accent_color_1 = "#876543" -- types and constants
+    c.accent_color_2 = "#345678" -- functions
+  end,
+}
 ```
 
-To customize the accent colors for the mono palette:
+### Customizing highlights
 
 ```lua
-  opts = {
-    on_colors = function(c)
-      -- Custom accent colors for mono palette
-      c.accent_color_1 = vim.o.background == "dark" and "#876543"  -- Custom color for types and constants
-      c.accent_color_2 = vim.o.background == "dark" and  "#345678"  -- Custom color for functions
-    end,
-  }
-```
-
-If you want more control over highlight groups, that is also possible:
-
-```lua
-  opts = {
-    on_highlights = function(hl, c)
-      hl.Constant = { fg = "#00ff00", bold = true }
-    end,
-  },
+opts = {
+  on_highlights = function(hl, c)
+    hl.Constant = { fg = "#00ff00", bold = true }
+  end,
+}
 ```
 
 ### Lualine
 
-The theme includes a [Lualine](https://github.com/nvim-lualine/lualine.nvim) theme. To enable it:
-
 ```lua
 require('lualine').setup {
-    options = {
-        theme = 'jellybeans-nvim'
-    }
+  options = { theme = 'jellybeans-nvim' }
 }
 ```
 
-## 🔌 Extras Support
+## Extras
 
-- FZF
-- Ghostty
-- Wezterm
-- Windows Terminal
-- Yazi
-- and [more...](https://github.com/WTFox/jellybeans.nvim/tree/main/extras)
+Terminal and app themes for FZF, Ghostty, Kitty, Tmux, Wezterm, Windows Terminal, Yazi, and more — see the [extras directory](https://github.com/WTFox/jellybeans.nvim/tree/main/extras).
 
-## 💕 Inspirations
+## Inspirations
 
 - [jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
-- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) by [Folke](https://githubcom/folke)
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) by [Folke](https://github.com/folke)
 - [jellybeans-nvim](https://github.com/metalelf0/jellybeans-nvim) by [metalelf0](https://github.com/metalelf0)
 - [jbeans](https://github.com/scajanus/jbeans) by [scajanus](https://github.com/scajanus)
 
-## 🌟 Star History
+## Star History
 
 <a href="https://star-history.com/#wtfox/jellybeans.nvim&Date">
  <picture>
